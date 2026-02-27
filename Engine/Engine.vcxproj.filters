@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Core">
+      <UniqueIdentifier>{6E95150F-DA4A-8E04-633F-88DBCFF38408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Core\Events">
+      <UniqueIdentifier>{92191B46-7EFD-DB9B-E75D-D6EED360C61D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Core\ImGui">
+      <UniqueIdentifier>{18E5BF76-84FB-BD0C-CD72-492E39C88E94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Core\Renderer">
+      <UniqueIdentifier>{D4D44230-C063-CCF9-6982-E0F455F0DC9F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Platform">
+      <UniqueIdentifier>{6A48A913-D6D3-16D8-DFE4-99CC4BEF72D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Platform\OpenGL">
+      <UniqueIdentifier>{5E160775-4A10-30C7-337D-C6D71F169633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Platform\Windows">
+      <UniqueIdentifier>{A4BC056E-10F4-4D05-19FE-B12885B474FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor">
+      <UniqueIdentifier>{935FDCD7-7F01-07AE-68BC-1A0254FD8DFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vendor\StbImage">
+      <UniqueIdentifier>{8EDADC74-FA65-4A39-0377-CD2D6F81A639}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Core\Application.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\CameraController.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Core.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\EntryPoint.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Events\ApplicationEvent.h">
+      <Filter>Source\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Events\Event.h">
+      <Filter>Source\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Events\KeyEvent.h">
+      <Filter>Source\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Events\MouseEvent.h">
+      <Filter>Source\Core\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\ImGui\ImGuiLayer.h">
+      <Filter>Source\Core\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Input.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\KeyCodes.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Layer.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\LayerStack.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Log.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\MouseButtonCodes.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RBuffer.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RCamera.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RGraphicsContext.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RLight.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RRenderAPI.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RRenderer.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RShader.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RTexture.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Renderer\RVertexArray.h">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Window.h">
+      <Filter>Source\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLBuffer.h">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLContext.h">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLRenderAPI.h">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLShader.h">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLTexture.h">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLVertexArray.h">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Windows\WindowsInput.h">
+      <Filter>Source\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Windows\WindowsWindow.h">
+      <Filter>Source\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\enginepch.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Vendor\StbImage\stb_image.h">
+      <Filter>Vendor\StbImage</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Core\Application.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\CameraController.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\ImGui\ImGuiBuild.cpp">
+      <Filter>Source\Core\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\ImGui\ImGuiLayer.cpp">
+      <Filter>Source\Core\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Layer.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\LayerStack.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Log.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RBuffer.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RCamera.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RLight.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RRenderAPI.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RRenderer.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RShader.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RTexture.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Renderer\RVertexArray.cpp">
+      <Filter>Source\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Window.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLBuffer.cpp">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLContext.cpp">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLRenderAPI.cpp">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLShader.cpp">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLTexture.cpp">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLVertexArray.cpp">
+      <Filter>Source\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\Windows\WindowsInput.cpp">
+      <Filter>Source\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Source\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\enginepch.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendor\StbImage\stb_image.cpp">
+      <Filter>Vendor\StbImage</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

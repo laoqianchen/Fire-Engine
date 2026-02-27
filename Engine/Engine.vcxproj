@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)..\Binaries\Debug-windows-x86_64\Engine\</OutDir>
+    <IntDir>$(ProjectDir)..\Intermediate\Debug-windows-x86_64\Engine\</IntDir>
+    <TargetName>Engine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)..\Binaries\Release-windows-x86_64\Engine\</OutDir>
+    <IntDir>$(ProjectDir)..\Intermediate\Release-windows-x86_64\Engine\</IntDir>
+    <TargetName>Engine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)..\Binaries\Dist-windows-x86_64\Engine\</OutDir>
+    <IntDir>$(ProjectDir)..\Intermediate\Dist-windows-x86_64\Engine\</IntDir>
+    <TargetName>Engine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>enginepch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>ENGINE_PLATFORM_WINDOWS;ENGINE_BUILD_DLL;GLFW_INCLUDE_NONE;ENGINE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Vendor\Spdlog\include;Source;Vendor\GLFW\include;Vendor\Glad\include;Vendor\ImGui;Vendor\GLM;Vendor\StbImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>..\Binaries\Debug-windows-x86_64\Engine\Engine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\Binaries\Debug-windows-x86_64\Engine\Engine.dll\ (xcopy /Q /E /Y /I ..\Binaries\Debug-windows-x86_64\Engine\Engine.dll "..\Binaries\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\Binaries\Debug-windows-x86_64\Engine\Engine.dll "..\Binaries\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>enginepch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>ENGINE_PLATFORM_WINDOWS;ENGINE_BUILD_DLL;GLFW_INCLUDE_NONE;ENGINE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Vendor\Spdlog\include;Source;Vendor\GLFW\include;Vendor\Glad\include;Vendor\ImGui;Vendor\GLM;Vendor\StbImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>..\Binaries\Release-windows-x86_64\Engine\Engine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\Binaries\Release-windows-x86_64\Engine\Engine.dll\ (xcopy /Q /E /Y /I ..\Binaries\Release-windows-x86_64\Engine\Engine.dll "..\Binaries\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\Binaries\Release-windows-x86_64\Engine\Engine.dll "..\Binaries\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>enginepch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>ENGINE_PLATFORM_WINDOWS;ENGINE_BUILD_DLL;GLFW_INCLUDE_NONE;ENGINE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Vendor\Spdlog\include;Source;Vendor\GLFW\include;Vendor\Glad\include;Vendor\ImGui;Vendor\GLM;Vendor\StbImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>..\Binaries\Dist-windows-x86_64\Engine\Engine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\Binaries\Dist-windows-x86_64\Engine\Engine.dll\ (xcopy /Q /E /Y /I ..\Binaries\Dist-windows-x86_64\Engine\Engine.dll "..\Binaries\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\Binaries\Dist-windows-x86_64\Engine\Engine.dll "..\Binaries\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Core\Application.h" />
+    <ClInclude Include="Source\Core\CameraController.h" />
+    <ClInclude Include="Source\Core\Core.h" />
+    <ClInclude Include="Source\Core\EntryPoint.h" />
+    <ClInclude Include="Source\Core\Events\ApplicationEvent.h" />
+    <ClInclude Include="Source\Core\Events\Event.h" />
+    <ClInclude Include="Source\Core\Events\KeyEvent.h" />
+    <ClInclude Include="Source\Core\Events\MouseEvent.h" />
+    <ClInclude Include="Source\Core\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="Source\Core\Input.h" />
+    <ClInclude Include="Source\Core\KeyCodes.h" />
+    <ClInclude Include="Source\Core\Layer.h" />
+    <ClInclude Include="Source\Core\LayerStack.h" />
+    <ClInclude Include="Source\Core\Log.h" />
+    <ClInclude Include="Source\Core\MouseButtonCodes.h" />
+    <ClInclude Include="Source\Core\Renderer\RBuffer.h" />
+    <ClInclude Include="Source\Core\Renderer\RCamera.h" />
+    <ClInclude Include="Source\Core\Renderer\RGraphicsContext.h" />
+    <ClInclude Include="Source\Core\Renderer\RLight.h" />
+    <ClInclude Include="Source\Core\Renderer\RRenderAPI.h" />
+    <ClInclude Include="Source\Core\Renderer\RRenderer.h" />
+    <ClInclude Include="Source\Core\Renderer\RShader.h" />
+    <ClInclude Include="Source\Core\Renderer\RTexture.h" />
+    <ClInclude Include="Source\Core\Renderer\RVertexArray.h" />
+    <ClInclude Include="Source\Core\Window.h" />
+    <ClInclude Include="Source\Engine.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLBuffer.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLContext.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLRenderAPI.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLShader.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLTexture.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ROpenGLVertexArray.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="Source\enginepch.h" />
+    <ClInclude Include="Vendor\StbImage\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Core\Application.cpp" />
+    <ClCompile Include="Source\Core\CameraController.cpp" />
+    <ClCompile Include="Source\Core\ImGui\ImGuiBuild.cpp" />
+    <ClCompile Include="Source\Core\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="Source\Core\Layer.cpp" />
+    <ClCompile Include="Source\Core\LayerStack.cpp" />
+    <ClCompile Include="Source\Core\Log.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RBuffer.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RCamera.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RLight.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RRenderAPI.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RRenderer.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RShader.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RTexture.cpp" />
+    <ClCompile Include="Source\Core\Renderer\RVertexArray.cpp" />
+    <ClCompile Include="Source\Core\Window.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLBuffer.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLContext.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLRenderAPI.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLShader.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLTexture.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ROpenGLVertexArray.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\enginepch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Vendor\StbImage\stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Vendor\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Vendor\ImGui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
