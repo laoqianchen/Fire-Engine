@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>G:\Backup\自研引擎\2026-2-8\FireEngine\Project\FireEngine\Binaries\Debug-windows-x86_64\Engine\Engine.dll</FullPath>
+      <FullPath>G:\important_project\FireEngine\Fire-Engine\Binaries\Debug-windows-x86_64\Engine\Engine.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>G:\Backup\自研引擎\2026-2-8\FireEngine\Project\FireEngine\Binaries\Debug-windows-x86_64\Sandbox\Sandbox.exe</FullPath>
+      <FullPath>G:\important_project\FireEngine\Fire-Engine\Binaries\Debug-windows-x86_64\Sandbox\Sandbox.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

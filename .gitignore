@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Intermediate 文件夹
+/Intermediate/
+
+# Binaries 文件夹
+/Binaries/
